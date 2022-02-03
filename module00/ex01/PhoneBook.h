@@ -14,8 +14,8 @@ private:
 	int last_contact;
 public:
 	PhoneBook();
-	void add_to_phonebook;
-	void add_count;
+	void add_to_phonebook();
+	void add_count();
 	void search_contact();
 	~PhoneBook();
 };

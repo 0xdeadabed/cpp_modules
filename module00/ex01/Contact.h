@@ -16,7 +16,7 @@ public:
 	void    add_contact();
 	void    count_contact();
 	void    count_search();
-	void    create_table(std::string line);
+	static void    create_table(std::string line);
 	~Contact();
 
 private:

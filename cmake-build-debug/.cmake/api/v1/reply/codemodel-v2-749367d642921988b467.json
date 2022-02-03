@@ -6,10 +6,9 @@
 			[
 				{
 					"build" : ".",
-					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
 					"minimumCMakeVersion" : 
 					{
-						"string" : "3.21"
+						"string" : "3.20.2"
 					},
 					"projectIndex" : 0,
 					"source" : ".",
@@ -39,7 +38,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "cpp_module::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-cpp_module-Debug-ef00a89dad39bc0e8daa.json",
+					"jsonFile" : "target-cpp_module-Debug-79d5143f5a681ccbdd64.json",
 					"name" : "cpp_module",
 					"projectIndex" : 0
 				}
@@ -49,12 +48,12 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/home/penguin/projects/cpp_module/cmake-build-debug",
-		"source" : "/home/penguin/projects/cpp_module"
+		"build" : "/Users/hsabir/Documents/cpp_module/cmake-build-debug",
+		"source" : "/Users/hsabir/Documents/cpp_module"
 	},
 	"version" : 
 	{
 		"major" : 2,
-		"minor" : 3
+		"minor" : 2
 	}
 }

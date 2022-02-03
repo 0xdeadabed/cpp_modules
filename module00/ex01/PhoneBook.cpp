@@ -21,24 +21,23 @@ void PhoneBook::add_to_phonebook()
 		last_contact++;
 }
 
-void PhoneBook::add_count()
-{
+void PhoneBook::add_count(){
 	contact[count - 1].count_contact();
 }
 
 void PhoneBook::search_contact(){
-	int k = 0;
+	int k;
 	std::string i;
 	
-	std::cout << "| index | nom | prenom |" << std::endl;
-	std::cout << "------------------------" << std::endl;
+	std::cout << "|  index  |    first_name    |      last_name      |     nickname     |" << std::endl;
+	std::cout << "-----------------------------------------------------------------------" << std::endl;
 	
 	for (int i = 0; i < last_contact; i++){
 		contact[i].count_search();
 		std::cout << std::endl;
 		
 	}
-	std::cout << "-------------------------------------" << std::endl;
+	std::cout << "-----------------------------------------------------------------------" << std::endl;
 	std::cout << "choose index: ";
 	std::cin >> i;
 	if (i != "1" && i != "2" && i != "3" && i != "4"
@@ -56,4 +55,5 @@ void PhoneBook::search_contact(){
 	contact[k - 1].count_contact();
 }
 
-PhoneBook::~PhoneBook() {}
+
+PhoneBook::~PhoneBook() = default;
