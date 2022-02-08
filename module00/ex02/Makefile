@@ -5,32 +5,33 @@
 #                                                    +:+ +:+         +:+     #
 #   By:  <>                                        +#+  +:+       +#+        #
 #                                                +#+#+#+#+#+   +#+           #
-#   Created: 2022/02/03 10:44:31 by                   #+#    #+#             #
-#   Updated: 202#   Updated: 2022/02/03 10:52:46 by                  ###   ########.fr       #                                                              #
+#   Created: 2022/02/03 11:36:31 by                   #+#    #+#             #
+#   Updated: 202#   Updated: 2022/02/03 12:46:50 by                  ###   ########.fr       #                                                              #
 # ************************************************************************** #
 
-NAME := phonebook
+NAME = handle_accounts
 
-SRCS := Contact.cpp PhoneBook.cpp main.cpp
-INCS := Contact.h PhoneBook.h
-OBJS := $(SRCS:.cpp=.o)
+SRCS = Account.cpp	\
+		tests.cpp
 
-CPP := g++
-CPPFLAGS := -std=c++98 -Wall -Werror -Wextra
+OBJS = $(SRCS:.cpp=.o)
+
+CXX = clang++
+
+CXXFLAGS = -Wall -Wextra -Werror
+
+RM = rm -f
 
 all: $(NAME)
 
-$(NAME): $(OBJS) $(INCS)
-	@$(CPP) $(OBJS) -o $@
-
-%.o: %.cpp %h
-	$(CPP) $(CPPFLAGS) -o $@ -c $<
+$(NAME): $(OBJS)
+	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 
 clean:
-	@rm -f $(OBJS)
+	$(RM) $(OBJS)
 
 fclean: clean
-	rm -f $(NAME)
+	$(RM) $(NAME)
 
 re: fclean all
 

@@ -25,6 +25,7 @@ private:
 	std::string last_name;
 	std::string nickname;
 	std::string phone_number;
+	std::string dark_secret;
 };
 
 

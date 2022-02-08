@@ -11,4 +11,8 @@ add_executable(cpp_module
         module00/ex01/Contact.h
         module00/ex01/main.cpp
         module00/ex01/PhoneBook.cpp
-        module00/ex01/PhoneBook.h)
+        module00/ex01/PhoneBook.h
+#        module00/ex02/Account.cpp
+#        module00/ex02/Account.h
+        #module00/ex02/tests.cpp
+        )
