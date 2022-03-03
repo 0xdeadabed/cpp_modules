@@ -30,11 +30,11 @@ int Sed::replace(const std::string filename, const std::string s1, const std::st
 	}
 
 	std::string line;
-	while (std::getline(input, line, '\n').good()) {
+	while (std::getline(input, line).good()) {
 		output << Sed::_strReplace(line, s1, s2);
-		if (!input.eof()) continue;
-		output << '\n';
+		output << "\n";	
 	}
+
 	input.close();
 	output.close();
 	return 0;
