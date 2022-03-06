@@ -12,23 +12,22 @@
 
 class Fixed
 {
+    private:
+        /* private data */
+		static  const int _nFractBits = 8;
+		int _rawBits;
     public:
         Fixed ();
 		Fixed(const int value);
 		Fixed(const float value);
 		Fixed(const Fixed &other);
-        ~Fixed ();
-
 		Fixed &operator=(const Fixed &other);
+        ~Fixed ();
 
 		void setRawBits(const int rawBits);
 		int	getRawBits() const;
 		int toInt() const;
 		float toFloat() const;
-    private:
-        /* private data */
-		static  const int _nFractBits = 8;
-		int _rawBits;
 };
 
 std::ostream &operator<<(std::ostream &ostream, const Fixed &myClass);

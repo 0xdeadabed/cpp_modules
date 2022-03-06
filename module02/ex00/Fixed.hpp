@@ -12,19 +12,19 @@
 
 class Fixed
 {
-    public:
-        Fixed ();
-		Fixed(const Fixed &other);
-        ~Fixed ();
-
-		Fixed &operator=(const Fixed &other);
-
-		void setRawBits(const int rawBits);
-		int	getRawBits() const;
     private:
         /* private data */
 		static  const int _nFractBits = 8;
 		int _rawBits;
+    public:
+        Fixed (); // Default constructor
+		Fixed(const Fixed &other); // Copy constructor
+		Fixed &operator=(const Fixed &other); // Copy assignment operator overload
+        ~Fixed ();
+
+
+		void setRawBits(const int rawBits);
+		int	getRawBits() const;
 };
 
 #endif /* end of include guard FIXED_HPP */
