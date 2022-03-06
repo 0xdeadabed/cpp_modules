@@ -34,7 +34,7 @@ Fixed &Fixed::operator=(const Fixed &other) {
 }
 
 
-/*	cmp dunctions	*/
+/*	cmp functions	*/
 bool Fixed::operator>(const Fixed &other) const {
 	return this->_rawBits > other._rawBits;
 }

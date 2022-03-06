@@ -11,6 +11,7 @@ Fixed::Fixed()	: _rawBits(0)
 	std::cout << "Default constructor called" << std::endl;
 }
 
+// Other = the right hand
 Fixed::Fixed(const Fixed &other) {
 	std::cout << "Copy constructor called" << std::endl;
 	*this = other;
@@ -22,6 +23,8 @@ Fixed::~Fixed()
 }
 
 Fixed &Fixed::operator=(const Fixed &other) {
+	// Get an object as argument which is the right hand object
+	// Copy it into a new object
 	std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &other) {
 		this->_rawBits = other.getRawBits();

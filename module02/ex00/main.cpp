@@ -7,11 +7,11 @@
 #include "Fixed.hpp"
 
 int main( void ) {
-	Fixed a;
-	Fixed b(a);
+	Fixed a; // Calling the default constructor
+	Fixed b(a); // Calling the copy constructor
 	Fixed c;
 
-	c = b;
+	c = b; // Calling the copy assignment operator overload
 
 	std::cout << a.getRawBits() << std::endl;
 	std::cout << b.getRawBits() << std::endl;
