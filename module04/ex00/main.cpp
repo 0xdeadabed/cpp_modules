@@ -6,10 +6,11 @@
 
 #include "Cat.hpp"
 #include "Dog.hpp"
-
+#include "WrongCat.hpp"
+//#include "WrongAnimal.hpp"
 int main() {
-	std::cout << "==========  GOOD  ANIMALS  ==========\n" << std::endl;
 
+	std::cout << "Correct" << std::endl;
 	Animal *animal = new Animal();
 	Animal *dog = new Dog();
 	Animal *cat = new Cat();
@@ -32,6 +33,20 @@ int main() {
 	delete dog;
 	delete cat;
 
-	/**********************************************************/
+	std::cout << std::endl;
+
+	std::cout << "Wrong" << std::endl;
+
+	WrongAnimal *a1 = new WrongAnimal();
+	WrongAnimal *c1 = new WrongCat();
+
+	std::cout << std::endl;
+	
+	a1->makeSound();
+	c1->makeSound();
+
+	delete a1;
+	delete c1;
+
 }
 

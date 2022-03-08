@@ -6,22 +6,19 @@
 
 #include "Dog.hpp"
 
-Dog::Dog()
-{
+Dog::Dog() {
    this->type = "Dog";
 
    std::cout << "[Dog] default constructor"<< std::endl;
 }
 
-Dog::Dog(const Dog &other)
-{
+Dog::Dog(const Dog &other) {
 	*this = other;
 
 	std::cout << "[Dog] copy constructor" << std::endl;
 }
 
-Dog::~Dog()
-{
+Dog::~Dog() {
 	std::cout << "[Dog] deconstructor" << std::endl;
 }
 
