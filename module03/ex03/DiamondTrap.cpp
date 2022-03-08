@@ -7,13 +7,16 @@
 #include "DiamondTrap.hpp"
 
 DiamondTrap::DiamondTrap() {
-    this->_name = "DiamondTrap";
+    this->_name = "Default";
 	this->ClapTrap::_name = std::string("DiamondTrap").append("_clap_name");
 	this->_hitPoint = FragTrap::_hitPoint;
 	this->_energyPoint = ScavTrap::_energyPoint;
 	this->_attackDamage = FragTrap::_attackDamage;
 
-	std::cout << this->_name << " DiamondTrap created " << std::endl;
+	std::cout
+		<< "["
+		<< this->_name
+		<< "(DiamondTrap)] created" << std::endl;
 }
 
 DiamondTrap::DiamondTrap(std::string name) {
@@ -23,17 +26,29 @@ DiamondTrap::DiamondTrap(std::string name) {
 	this->_energyPoint = ScavTrap::_energyPoint;
 	this->_attackDamage = FragTrap::_attackDamage;
 
-	std::cout << this->_name << " DiamondTrap created " << std::endl;
+	std::cout
+		<< "["
+		<< this->_name
+		<< "(DiamondTrap)] created given a name"
+		<< std::endl;
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap &other) {
 	*this = other;
 
-	std::cout << this->_name << " DiamondTrap copied" << std::endl;
+	std::cout
+		<< "["
+		<< this->_name << "(DiamondTrap)] copied from "
+		<< other._name
+		<< std::endl;
 }
 
 DiamondTrap::~DiamondTrap() {
-	std::cout << this->_name << " DiamondTrap destroyed " << std::endl;
+	std::cout
+		<< "["
+		<< this->_name
+		<< "(DiamondTrap)] destroyed"
+		<< std::endl;
 }
 
 DiamondTrap &DiamondTrap::operator=(const DiamondTrap &other) {
@@ -43,7 +58,12 @@ DiamondTrap &DiamondTrap::operator=(const DiamondTrap &other) {
 	this->_energyPoint = other._energyPoint;
 	this->_attackDamage = other._attackDamage;
 
-	std::cout << this->_name << " DiamondTrap overloaded " << other._name << std::endl;
+	std::cout
+		<< "["
+		<< this->_name
+		<< "(DiamondTrap)] overloading from"
+		<< other._name
+		<< std::endl;
 
 	return *this;
 }
@@ -53,6 +73,9 @@ void DiamondTrap::attack(const std::string &target) {
 }
 
 void DiamondTrap::whoAmI() {
-	std::cout << "I am " << this->_name << ", my ClapTrap name is "
+	std::cout
+		<< "I am "
+		<< this->_name
+		<< ", my ClapTrap name is "
 		<< this->ClapTrap::_name << std::endl;
 }

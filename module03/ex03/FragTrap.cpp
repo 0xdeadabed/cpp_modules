@@ -7,12 +7,16 @@
 #include "FragTrap.hpp"
 
 FragTrap::FragTrap() {
-    this->_name = "FragTrap";
+    this->_name = "Default";
 	this->_hitPoint = 100;
 	this->_energyPoint = 100;
 	this->_attackDamage = 30;
 
-	std::cout << this->_name << " FT created" << std::endl;
+	std::cout
+		<< "["
+		<< this->_name
+		<< "(FragTrap)] created"
+		<< std::endl;
 }
 
 FragTrap::FragTrap(std::string name) {
@@ -21,17 +25,28 @@ FragTrap::FragTrap(std::string name) {
 	this->_energyPoint = 100;	
 	this->_attackDamage = 30;
 
-	std::cout << this->_name << " FT created" << std::endl;
+	std::cout
+		<<"["
+		<< this->_name
+		<< "(FragTrap)] created"
+		<< std::endl;
 }
 
 FragTrap::FragTrap(const FragTrap &other) {
 	*this = other;
 
-	std::cout << this->_name << " copied from " << other._name << std::endl;
+	std::cout
+		<< "["
+		<< this->_name
+		<< "(FragTrap)] copied from " << other._name << std::endl;
 }
 
 FragTrap::~FragTrap() {
-	std::cout << this->_name << " FT destroyed" << std::endl;
+	std::cout
+		<< "["
+		<< this->_name
+		<< "(FragTrap)] destroyed"
+		<< std::endl;
 }
 
 FragTrap &FragTrap::operator=(const FragTrap &other) {
@@ -40,17 +55,29 @@ FragTrap &FragTrap::operator=(const FragTrap &other) {
 	this->_energyPoint =  other._energyPoint;
 	this->_attackDamage = other._energyPoint;
 
-	std::cout << this->_name << " FT copied by operator overloading from "
-		<< other._name << std::endl;
+	std::cout
+		<<"["
+		<< this->_name
+		<< "(FragTrap)] copied by operator overloading from "
+		<< other._name
+		<< std::endl;
 	
 	return *this;
 }
 
 void FragTrap::highFivesGuys() {
 	if (this->_hitPoint == 0) {
-		std::cout << this->_name << " FT dead head can't hight five " << std::endl;
+		std::cout
+			<< "["
+			<< this->_name
+			<< "(FragTrap)] dead head can't hight five "
+			<< std::endl;
 		return ;
 	}
 
-	std::cout << this->_name << " FT hight fives!" << std::endl;
+	std::cout
+		<< "["
+		<< this->_name
+		<< "(FragTrap)] hight fives!"
+		<< std::endl;
 }

@@ -7,10 +7,14 @@
 #ifndef ANIMAL_HPP
 
 #define ANIMAL_HPP
+
 #include <iostream>
 
 class Animal
 {
+    protected:
+        /* private data */
+		std::string type;
     public:
         Animal ();
 		Animal (const Animal &other);
@@ -18,12 +22,9 @@ class Animal
 
 		Animal &operator=(const Animal &other);
 
-		virtual void makeSound();
+		virtual void makeSound() const;
 
-		const std::string &getType();
-    private:
-        /* private data */
-		std::string type;
+		const std::string &getType() const;
 };
 
 #endif /* end of include guard ANIMAL_HPP */

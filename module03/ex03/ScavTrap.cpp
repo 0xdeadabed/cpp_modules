@@ -12,7 +12,11 @@ ScavTrap::ScavTrap() {
    this->_energyPoint = 50;
    this->_hitPoint = 20;
 
-   std::cout << this->_name << " ST object created" << std::endl;
+   std::cout
+	   << "["
+	   << this->_name
+	   << "(ScavTrap)] created"
+	   << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string name) {
@@ -21,17 +25,30 @@ ScavTrap::ScavTrap(std::string name) {
 	this->_energyPoint = 50;
 	this->_hitPoint = 20;
 
-	std::cout << this->_name << " ST object created" << std::endl;
+	std::cout
+		<< "["
+		<< this->_name
+		<< "(ScavTrap)] created given a name"
+		<< std::endl;
 }
 
 ScavTrap::ScavTrap(const ScavTrap &other) {
 	*this = other;
 
-	std::cout << this->_name << " ST copied from " << other._name << std::endl;
+	std::cout
+		<< "["
+		<< this->_name
+		<< "(ScavTrap)] copied from "
+		<< other._name
+		<< std::endl;
 }
 
 ScavTrap::~ScavTrap() {
-	std::cout << this->_name << " ST destroyed" << std::endl;
+	std::cout
+		<< "["
+		<< this->_name
+		<< "(ScavTrap)] destroyed"
+		<< std::endl;
 }
 
 ScavTrap &ScavTrap::operator=(const ScavTrap &other) {
@@ -40,30 +57,52 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &other) {
 	this->_energyPoint = other._energyPoint;
 	this->_attackDamage = other._attackDamage;
 
-	std::cout << this->_name << " ST operator overloaded from "
-		<< other._name << std::endl;
+	std::cout
+		<< "["
+		<< this->_name
+		<< "(ScavTrap)] operator overloading from "
+		<< other._name
+		<< std::endl;
 
 	return *this;
 }
 
 void ScavTrap::attack(const std::string &target) {
 	if (this->_hitPoint == 0) {
-		std::cout << this->_name << " ST dead head can't attack " << std::endl;
+		std::cout
+			<< "["
+			<< this->_name
+			<< "(ScavTrap)] dead head can't attack "
+			<< std::endl;
 		return;
 	}
 	else
 	{
-		std::cout << this->_name << " ST attacked " << target
-			<< " caused " << this->_attackDamage << " amount of damage"
+		std::cout
+			<< "["
+			<< this->_name
+			<< "(ScavTrap)] attacked "
+			<< target
+			<< " caused "
+			<< this->_attackDamage
+			<< " amount of damage"
 			<< std::endl;
 	}
 }
 
 void ScavTrap::guardGate() {
 	if (this->_hitPoint == 0) {
-		std::cout << this->_name << " ST dead head can't guard a gate " << std::endl;
+		std::cout 
+			<< "["
+			<< this->_name
+			<< "(ScavTrap)] dead head can't guard a gate "
+			<< std::endl;
 		return;
 	}
 
-	std::cout << this->_name << " ST guard the gate " << std::endl;
+	std::cout
+		<< "["
+		<< this->_name
+		<< "(ScavTrap)] guard the gate "
+		<< std::endl;
 }
