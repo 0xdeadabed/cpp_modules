@@ -17,6 +17,7 @@ class Character : public ICharacter {
 		static const int inventorySize = 4;
 
 		std::string _name;
+		int _nEquiped;
 		AMateria *_inventory[Character::inventorySize];
     public:
         Character(const std::string &name);
@@ -25,7 +26,7 @@ class Character : public ICharacter {
 
 		Character &operator=(const Character &other);
 
-		const std::string &getName const;
+		const std::string &getName() const;
 		void equip(AMateria *m);
 		void unequip(int idx);
 		void use(int idx, ICharacter &target);

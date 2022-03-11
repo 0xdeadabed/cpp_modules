@@ -6,7 +6,7 @@
 
 #include "Ice.hpp"
 
-Ice::Ice() : AMateria("ice") { std::cout << "Hello " << this->_type << std::endl; }
+Ice::Ice() : AMateria("ice") { /*std::cout << "Hello " << this->_type << std::endl;*/ }
 
 Ice::Ice(const Ice &other) : AMateria("ice"){
 	*this = other;

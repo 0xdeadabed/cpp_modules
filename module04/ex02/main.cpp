@@ -10,10 +10,10 @@
 
 int main()
 {
-	// Abstract animal class
-	
-	Animal *a = new Animal();
-	delete a;
+	// Abstract animal class is KO,
+	// protected constructor can't be called
+	//Animal *a = new Animal();
+	//delete a;
 
 	//
 	Dog *d = new Dog();

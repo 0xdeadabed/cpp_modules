@@ -10,13 +10,8 @@
 
 int main()
 {
-	std::cout << "Start of animal dog" << std::endl;
-	Animal *a = new Dog();
-
-	delete a;
-
-	std::cout << "End of animal dog" << std::endl;
-	std::cout << std::endl;
+	std::cout << "	Start of animal dog	" << std::endl;
+	std::cout << "	+++++++++++++++++++	" << std::endl;
 	Dog *d = new Dog();
 	
 	d->getBrain()->ideas[0] = "Wuuf";
@@ -30,11 +25,15 @@ int main()
 		std::cout << i << ": " << d->getBrain()->ideas[i] << std::endl;
 	}
 
+	std::cout << "End of animal dog" << std::endl;
 	std::cout << std::endl;
 	delete d;
+
 	std::cout << std::endl;
 
-	std::cout << "Array of animals" << std::endl;
+	std::cout << "	Array of animals	" << std::endl;
+	std::cout << "	++++++++++++++++	" << std::endl;
+	std::cout << std::endl;
 	int nAnimal = 10;
 	Animal *animals[10];
 

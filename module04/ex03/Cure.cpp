@@ -6,7 +6,7 @@
 
 #include "Cure.hpp"
 
-Cure::Cure() : AMateria("cure") { std::cout << "Cure debug" << std::endl; }
+Cure::Cure() : AMateria("cure") { /*std::cout << "Cure debug" << std::endl;*/ }
 
 Cure::Cure(const Cure &other) : AMateria("cure") {
 	*this = other;

@@ -18,7 +18,7 @@ class Cure : public AMateria {
 
 		Cure &operator=(const Cure &other);
 		AMateria *clone () const;
-		void use(ICharacter &target); 
+		void use(ICharacter &t); 
 };
 
 #endif /* end of include guard CURE_HPP */
