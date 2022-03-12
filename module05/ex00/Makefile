@@ -7,6 +7,8 @@
 SHELL = /bin/sh
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
+# DEBUG
+CFLAGS += -g3 -fsanitize=address
 CC     = c++ $(CFLAGS)
 
 SRCS := $(shell find . -name '*.cpp')

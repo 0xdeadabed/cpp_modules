@@ -42,22 +42,34 @@ int Bureaucrat::getGrade() const {
 	return this->_grade;
 }
 
+void Bureaucrat::increment() {
+	checkThrow(this->_grade - 1);
+	std::cout << "Default increment -1" << std::endl;
+	--(this->_grade);
+}
+
 void Bureaucrat::increment(int n) {
-	checkThrow(this->_grade + n);
+	checkThrow(this->_grade - n);
 	std::cout
-		<< "Incremented "
+		<< "Increment -"
 		<< n
 		<< std::endl;
-	this->_grade += n;
+	this->_grade -= n;
+}
+
+void Bureaucrat::decrement() {
+	checkThrow(this->_grade +1);
+	std::cout << "Default decrement +1" << std::endl;
+	++(this->_grade);
 }
 
 void Bureaucrat::decrement(int n) {
 	checkThrow(this->_grade - n);
 	std::cout
-		<< "Decremented "
+		<< "Decrement +"
 		<< n
 		<< std::endl;
-	this->_grade -= n;
+	this->_grade += n;
 }
 
 const char *Bureaucrat::GradeTooHighException::what() const throw() {
@@ -68,11 +80,12 @@ const char *Bureaucrat::GradeTooLowException::what() const throw() {
 	return "Exception: grade too low";
 }
 
+void Bureaucrat::signForm(Form &form) {
+	form.beSigned(*this);
+}
+
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &instance) {
 	os << instance.getName() << ", , bureaucrat grade " << instance.getGrade();
 	return os;
 }
 
-void Bureaucrat::signForm(Form &form) {
-	form.beSigned(*this);
-}

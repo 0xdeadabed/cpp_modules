@@ -20,6 +20,15 @@ int main()
 		std::cout<< e.what() << std::endl;
 	}
 	delete bob;
+
+	try {
+		Bureaucrat *spong = new Bureaucrat("Spong", 0);
+		std::cout << spong << std::endl;
+		if (spong)
+			delete spong;
+	} catch (std::exception &e) {
+		std::cout << e.what() << std::endl;
+	}
     return 0;
 }
 
