@@ -76,3 +76,11 @@ std::ostream &operator<<(std::ostream &os, const Bureaucrat &instance) {
 void Bureaucrat::signForm(Form &form) {
 	form.beSigned(*this);
 }
+
+void Bureaucrat::executeForm(const Form &form) const {
+	try {
+		form.beExecuted(*this);
+	} catch (std::exception& e) {
+		std::cout << e.what() << std::endl;
+	}
+}

@@ -23,15 +23,18 @@ class Form {
     public:
 		Form(const std::string &name, const std::string &target, int signGrade,int executeGrade);
 		Form(const Form &form);
-        ~Form ();
-
+        virtual ~Form ();
 		Form &operator=(const Form &other);
 
 		const std::string &getName() const;
+		const std::string &getTarget() const;
+
 		bool getSigned() const;
 		void beSigned(const Bureaucrat &bureaucrat);
+		void beExecuted(const Bureaucrat& bureaucrat) const;
 		int getSignedGrade() const;
 		int getExecuteGrade() const;
+		virtual void executeAction() const = 0;
 
 		// Nested classes
 		class GradeTooHighException : public std::exception {
@@ -40,9 +43,11 @@ class Form {
 		class GradeTooLowException : public std::exception {
 			const char *what() const throw();
 		};
+		class NotSigned : public std::exception {
+			public: const char* what() const throw();
+		};
 };
 
 std::ostream &operator<<(std::ostream &os, const Form &instance);
 
 #endif /* end of include guard FORM_HPP */
-

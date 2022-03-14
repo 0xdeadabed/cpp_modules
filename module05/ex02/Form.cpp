@@ -15,10 +15,10 @@ void checkGrade(int grade) {
 
 Form::Form()
 	: _signed(false),_name("form"),_signGrade(1),_executeGrade(1) {}
-
-Form::Form(const std::string &name, int signGrade, int executeGrade)
+Form::Form(const std::string &name, const std::string &target, int signGrade, int executeGrade)
 	: _signed(false),
-	_name(name),
+	  _target(target),
+	  _name(name),
 	_signGrade(signGrade),
 	_executeGrade(executeGrade) {
 		checkGrade(signGrade);
@@ -44,6 +44,10 @@ Form &Form::operator=(const Form &other) {
 
 const std::string &Form::getName() const {
 	return this->_name;
+}
+
+const std::string& Form::getTarget() const {
+	return this->_target;
 }
 
 bool Form::getSigned() const {
@@ -73,6 +77,24 @@ void Form::beSigned(const Bureaucrat &bureaucrat) {
 			<< this->_name
 			<< std::endl;
 	}
+}
+
+void Form::beExecuted(const Bureaucrat &bureaucrat) const {
+	if (this->_signed == false) {
+		std::cout << bureaucrat.getName() << " can't execute " << this->_name << std::endl;
+		throw Form::NotSigned();
+	}
+	if (bureaucrat.getGrade() > this->_executeGrade) {
+		std::cout << bureaucrat.getName() << " can't execute " << this->_name << std::endl;
+		throw Form::GradeTooLowException();
+	}
+
+	std::cout << bureaucrat.getName() << " has executed " << this->_name << std::endl;
+	this->executeAction();
+}
+
+const char* Form::NotSigned::what() const throw() {
+	return "Exception: form is not signed so it can't be executed";
 }
 
 const char *Form::GradeTooHighException::what() const throw() {

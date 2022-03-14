@@ -24,7 +24,7 @@ class Bureaucrat {
 	public:
 		Bureaucrat(const std::string &name, int grade);
 		Bureaucrat(const Bureaucrat &other);
-        ~Bureaucrat ();
+		~Bureaucrat ();
 
 		Bureaucrat &operator=(const Bureaucrat &other);
 
@@ -33,6 +33,7 @@ class Bureaucrat {
 		void increment(int n);
 		void decrement(int n);
 		void signForm(Form &form);
+		void executeForm(const Form& form) const;
 
 		// Nested classes
 		class GradeTooHighException : public std::exception {
@@ -48,4 +49,3 @@ class Bureaucrat {
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &instance);
 
 #endif /* end of include guard BUREAUCRAT_HPP */
-

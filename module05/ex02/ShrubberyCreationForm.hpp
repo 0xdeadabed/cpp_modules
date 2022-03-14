@@ -8,16 +8,20 @@
 
 #define SHRUBBERYCREATIONFORM_HPP
 
+#include <fstream>
 #include "Form.hpp"
 
 class ShrubberyCreationForm : public Form {
     private:
         ShrubberyCreationForm ();
     public:
-		ShrubberyCreationForm(const Form &form);
+		ShrubberyCreationForm(const std::string &t);
+		ShrubberyCreationForm(const ShrubberyCreationForm &other);
         ~ShrubberyCreationForm ();
-        
+
+		ShrubberyCreationForm &operator=(const ShrubberyCreationForm &other);
+
+	void executeAction() const;
 };
 
 #endif /* end of include guard SHRUBBERYCREATIONFORM_HPP */
-
