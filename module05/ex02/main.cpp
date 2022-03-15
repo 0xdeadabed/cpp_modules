@@ -33,7 +33,7 @@ int main() {
 
 	try {
 		scrat->executeForm(*sh);
-	} catch (std::exception &e){
+	} catch (std::exception &e) {
 		std::cout << e.what() << std::endl;
 	}
 
@@ -43,7 +43,7 @@ int main() {
 
 	try {
 		scrat->executeForm(*sh);
-	} catch (std::exception &e){
+	} catch (std::exception &e) {
 		std::cout << e.what() << std::endl;
 	}
 
@@ -52,15 +52,15 @@ int main() {
 	delete scrat;
 	delete sh;
 //	delete sh1;
+
 	std::cout << std::endl;
 	std::cout << "------------------------------------------------------------------------------" << std::endl;
-
 	std::cout << "++++++++++++++++++++++++++" << std::endl;
 	std::cout << "+ 	Robotomy tests	 +" << std::endl;
 	std::cout << "++++++++++++++++++++++++++" << std::endl;
 
 	Bureaucrat *rcrat = new Bureaucrat("rcrat", 150);
-	RobotomyRequestForm *rb  = new RobotomyRequestForm("rb");
+	RobotomyRequestForm *rb = new RobotomyRequestForm("rb");
 
 	std::cout << std::endl;
 	std::cout << *rcrat << std::endl;
@@ -71,8 +71,9 @@ int main() {
 		rb->executeAction();
 	delete rcrat;
 	delete rb;
-	std::cout << "------------------------------------------------------------------------------" << std::endl;
 
+	std::cout << std::endl;
+	std::cout << "------------------------------------------------------------------------------" << std::endl;
 	std::cout << "++++++++++++++++++++++++++" << std::endl;
 	std::cout << "+ 	Robotomy tests	 +" << std::endl;
 	std::cout << "++++++++++++++++++++++++++" << std::endl;
@@ -89,6 +90,10 @@ int main() {
 	std::cout << std::endl;
 	delete pcrat;
 	delete pp;
+
+	std::cout << std::endl;
 	std::cout << "------------------------------------------------------------------------------" << std::endl;
+	std::cout << std::endl;
+
 	return 0;
 }

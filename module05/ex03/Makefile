@@ -12,7 +12,7 @@ CC     = c++ $(CFLAGS)
 SRCS := $(shell find . -name '*.cpp')
 OBJ := $(SRCS:%cpp=%o)
 
-NAME   = polymor
+NAME   = coffe
 
 .cpp.o:
 	$(CC) -c $< -o $@
