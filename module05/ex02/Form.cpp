@@ -34,7 +34,7 @@ Form::Form(const Form &other) :
 		std::cout << "[Form] copy constructor" << std::endl;
 	}
 
-Form::~Form() { std::cout << "[Form] deconstructor" << std::endl; }
+Form::~Form() { std::cout << "[Form] destroyed" << std::endl; }
 
 Form &Form::operator=(const Form &other) {
 	std::cout << "[Form] assignment operator" << std::endl;

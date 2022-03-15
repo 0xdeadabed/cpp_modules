@@ -7,21 +7,25 @@
 #include "ShrubberyCreationForm.hpp"
 
 ShrubberyCreationForm::ShrubberyCreationForm()
-	: Form("shrubbery creation", "none", 145, 137) {}
+	: Form("[Shrubbery]", "none", 145, 137) {}
 
 ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target)
-	: Form("shrubbery creation", target, 145, 137) {
-	std::cout << "Shrubbery Creation Form created" << std::endl;
+	: Form("[Shrubbery] created", target, 145, 137) {
+	std::cout << "[Shrubbery] created" << std::endl;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &other)
 	: Form(other.getName(), other.getTarget(), other.getSignedGrade(), other.getExecuteGrade()) {
 	*this = other;
-	std::cout << "Copy of Shrubbery Creation Form created" << std::endl;
+	std::cout
+		<< "[Shrubbery] created from ["
+		<< other.getName()
+		<< "]"
+		<< std::endl;
 }
 
 ShrubberyCreationForm::~ShrubberyCreationForm() {
-	std::cout << "Shrubbery Creation Form destroyed" << std::endl;
+	std::cout << "[Shrubbery] destroyed" << std::endl;
 }
 
 void ShrubberyCreationForm::executeAction() const {
@@ -68,7 +72,7 @@ void ShrubberyCreationForm::executeAction() const {
 }
 
 ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationForm &other) {
-	std::cout << "Shrubbery Creation Form assignment operator" << std::endl;
+	std::cout << "[Shrubbery] created from assignment operator" << std::endl;
 	if (this == &other) return *this;
 	return *this;
 }

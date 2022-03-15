@@ -28,4 +28,3 @@ class Animal
 };
 
 #endif /* end of include guard ANIMAL_HPP */
-
