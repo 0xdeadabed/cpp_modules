@@ -12,14 +12,12 @@
 #include "Form.hpp"
 
 class ShrubberyCreationForm : public Form {
-    private:
-        ShrubberyCreationForm ();
-    public:
-		ShrubberyCreationForm(const std::string &t);
-		ShrubberyCreationForm(const ShrubberyCreationForm &other);
-        ~ShrubberyCreationForm ();
+public:
+	ShrubberyCreationForm(const std::string &t);
 
-		ShrubberyCreationForm &operator=(const ShrubberyCreationForm &other);
+	ShrubberyCreationForm(const ShrubberyCreationForm &other);
+
+	~ShrubberyCreationForm();
 
 	void executeAction() const;
 };

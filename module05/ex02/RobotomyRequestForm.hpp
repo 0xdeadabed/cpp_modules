@@ -8,12 +8,11 @@
 
 #define ROBOTOMYREQUESTFORM_HPP
 
+#include <cstdlib>
+#include <ctime>
 #include "Form.hpp"
 
 class RobotomyRequestForm : public Form {
-private:
-	RobotomyRequestForm();
-
 public:
 	RobotomyRequestForm(const std::string &t);
 
@@ -21,7 +20,7 @@ public:
 
 	~RobotomyRequestForm();
 
-	RobotomyRequestForm &operator=(const RobotomyRequestForm &other);
+	void executeAction() const;
 };
 
 #endif /* end of include guard ROBOTOMYREQUESTFORM_HPP */

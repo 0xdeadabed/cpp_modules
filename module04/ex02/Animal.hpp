@@ -20,9 +20,8 @@ class Animal
 	public:
         virtual ~Animal ();
 		Animal &operator=(const Animal &other);
-		virtual void makeSound() const;
+		virtual void makeSound() const = 0;
 		const std::string &getType() const;
 };
 
 #endif /* end of include guard ANIMAL_HPP */
-

@@ -79,18 +79,19 @@ void Form::beSigned(const Bureaucrat &bureaucrat) {
 	}
 }
 
-void Form::beExecuted(const Bureaucrat &bureaucrat) const {
-	if (this->_signed == false) {
+void Form::execute(const Bureaucrat &bureaucrat) const {
+	if (this->_signed) {
+		if (bureaucrat.getGrade() > this->_executeGrade) {
+			std::cout << bureaucrat.getName() << " can't execute " << this->_name << std::endl;
+			throw Form::GradeTooLowException();
+		}
+
+		std::cout << bureaucrat.getName() << " has executed " << this->_name << std::endl;
+		this->executeAction();
+	} else {
 		std::cout << bureaucrat.getName() << " can't execute " << this->_name << std::endl;
 		throw Form::NotSigned();
 	}
-	if (bureaucrat.getGrade() > this->_executeGrade) {
-		std::cout << bureaucrat.getName() << " can't execute " << this->_name << std::endl;
-		throw Form::GradeTooLowException();
-	}
-
-	std::cout << bureaucrat.getName() << " has executed " << this->_name << std::endl;
-	this->executeAction();
 }
 
 const char* Form::NotSigned::what() const throw() {
@@ -106,7 +107,7 @@ const char *Form::GradeTooLowException::what() const throw() {
 }
 
 std::ostream &operator<<(std::ostream &os, const Form &instance) {
-	os << "[" << instance.getName() << "]"
+	os << instance.getName()
 		<< ", status: " << (instance.getSigned() ? "signed" : "not signed")
 		<< ", sign grade: " << instance.getSignedGrade()
 		<< ", execute grade: " << instance.getSignedGrade()

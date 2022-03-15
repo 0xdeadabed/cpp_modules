@@ -6,22 +6,15 @@
 
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm()
-	: Form("[Shrubbery]", "none", 145, 137) {}
-
 ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target)
-	: Form("[Shrubbery] created", target, 145, 137) {
+	: Form("Shruberry", target, 145, 137) {
 	std::cout << "[Shrubbery] created" << std::endl;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &other)
 	: Form(other.getName(), other.getTarget(), other.getSignedGrade(), other.getExecuteGrade()) {
 	*this = other;
-	std::cout
-		<< "[Shrubbery] created from ["
-		<< other.getName()
-		<< "]"
-		<< std::endl;
+	std::cout << "[Srubbery] copied from another object" << std::endl;
 }
 
 ShrubberyCreationForm::~ShrubberyCreationForm() {
@@ -69,10 +62,4 @@ void ShrubberyCreationForm::executeAction() const {
 				 "  |  something, it is so damn   |\n"
 				 "  |    much work to get it?     |\n"
 				 "   \\___________________________/"	<< std::endl;
-}
-
-ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationForm &other) {
-	std::cout << "[Shrubbery] created from assignment operator" << std::endl;
-	if (this == &other) return *this;
-	return *this;
 }
