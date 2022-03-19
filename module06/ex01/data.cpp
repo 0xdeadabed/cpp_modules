@@ -1,0 +1,10 @@
+/**
+ * @author   : Hajar Sabir (wubbalubba@dub.dub)
+ * @created  : 3/18/22.
+ */
+
+#include "data.hpp"
+
+uintptr_t serialize(Data *ptr) { return reinterpret_cast<uintptr_t>(ptr); }
+
+Data *deserialize(uintptr_t raw) { return reinterpret_cast<Data*>(raw); }

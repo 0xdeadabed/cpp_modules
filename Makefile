@@ -6,7 +6,7 @@
 
 SHELL = /bin/sh
 
-CFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
+CFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic -I.
 # DEBUG
 CFLAGS += -g3 -fsanitize=address
 CC     = c++ $(CFLAGS)
@@ -14,7 +14,7 @@ CC     = c++ $(CFLAGS)
 SRCS := $(shell find . -name '*.cpp')
 OBJ := $(SRCS:%cpp=%o)
 
-NAME   = bureaucrat
+NAME   = serialization
 
 .cpp.o:
 	$(CC) -c $< -o $@
