@@ -24,12 +24,18 @@ void Scalar::convert(const std::string &a) {
 	float isfloat = 0;
 	double isdouble = 0;
 
+	if (a.size() > 1 && !std::isdigit(a[0])) {
+		std::cout << "Error: only single character is allowed" << std::endl;
+		return ;
+	}
+
 	if (a.size() == 1 && std::isprint(a[0]) && !std::isdigit(a[0])) {
 		ischar = a[0];
 		std::cout << "char   : " << ischar << std::endl;
 		std::cout << "int    : " << static_cast<int>(a[0]) << std::endl;
 		std::cout << "float  : " << static_cast<float>(a[0]) << ".0f" << std::endl;
 		std::cout << "double : " << static_cast<double>(a[0]) << ".0" << std::endl;
+		return ;
 	}
 
 	isint = std::atoi(a.c_str());
@@ -55,7 +61,7 @@ void Scalar::convert(const std::string &a) {
 		ischar = "char is not displayable.";
 	}
 
-	std::cout << "char : " << ischar << std::endl;
+	std::cout << "charw : " << ischar << std::endl;
 	if (ischar == "impossible") {
 		std::cout << "int    : type conversion is impossible" << std::endl;
 	} else {
