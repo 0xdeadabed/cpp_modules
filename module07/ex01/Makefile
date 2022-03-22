@@ -14,7 +14,7 @@ CC     = c++ $(CFLAGS)
 SRCS := $(shell find . -name '*.cpp')
 OBJ := $(SRCS:%cpp=%o)
 
-NAME   = template
+NAME   = iter
 
 .cpp.o:
 	$(CC) -c $< -o $@
