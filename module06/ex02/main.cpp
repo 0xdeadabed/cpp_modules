@@ -39,22 +39,20 @@ void identify(Base *p){
 
 void identify(Base &p) {
 	try {
-		A &a = dynamic_cast<A&>(p);
-		(void)a;
+		A &tmp = dynamic_cast<A&>(p);
+		(void)tmp;
 		std::cout << "The object referenced by p is A" << std::endl;
 	} catch (...) {}
 	try {
-		B &b= dynamic_cast<B&>(p);
-		(void)b;
+		B &tmp= dynamic_cast<B&>(p);
+		(void)tmp;
 		std::cout << "The object referenced by p is B" << std::endl;
 	} catch (...) {}
 	try {
-		C &c = dynamic_cast<C&>(p);
-		(void)c;
+		C &tmp = dynamic_cast<C&>(p);
+		(void)tmp;
 		std::cout << "The object referenced by p is C" << std::endl;
 	} catch (...) {}
-
-//	std::cout << "Error: couldn't identify the object" << std::endl;
 }
 
 int main(void) {

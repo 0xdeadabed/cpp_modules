@@ -10,7 +10,7 @@
 //#include <cstdint>
 
 struct Data {
-	int n;
+	unsigned int n;
 };
 
 uintptr_t serialize(Data *ptr);

@@ -61,7 +61,7 @@ void Scalar::convert(const std::string &a) {
 		ischar = "char is not displayable.";
 	}
 
-	std::cout << "charw : " << ischar << std::endl;
+	std::cout << "char : " << ischar << std::endl;
 	if (ischar == "impossible") {
 		std::cout << "int    : type conversion is impossible" << std::endl;
 	} else {
